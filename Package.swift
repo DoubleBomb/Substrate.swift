@@ -21,10 +21,6 @@ var package = Package(
         .library(
             name: "SubstrateKeychain",
             targets: ["SubstrateKeychain"]),
-        .library(
-            name:"Serializable",
-            targets: ["SerializableFool"]
-        )
     ],
     dependencies: [
         .package(url: "https://github.com/tesseract-one/swift-scale-codec.git", from: "0.2.0"),
@@ -53,11 +49,8 @@ var package = Package(
             path: "Sources/Primitives"),
         .target(
             name: "SubstrateRpc",
-            dependencies: ["WebSocket"],
+            dependencies: ["WebSocket","Serializable"],
             path: "Sources/RPC"),
-        .target(
-            name: "SerializableFool",
-            dependencies: ["Serializable"]),
         .target(
             name: "SubstrateKeychain",
             dependencies: ["Substrate", "Sr25519", "Ed25519", "CSecp256k1", "Bip39", "UncommonCrypto"],
