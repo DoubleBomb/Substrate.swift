@@ -56,7 +56,8 @@ var package = Package(
             path: "Sources/RPC"),
         .target(
             name: "SubstrateMetadata",
-            dependencies: [.product(name: "ScaleCodec", package: "swift-scale-codec"),"SubstratePrimitives"]
+            dependencies: [.product(name: "ScaleCodec", package: "swift-scale-codec"),"SubstratePrimitives"],
+            path: "Sources/Substrate/Metadata",
         ),
         .target(
             name: "SubstrateKeychain",
