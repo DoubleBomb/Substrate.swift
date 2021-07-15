@@ -17,7 +17,7 @@ var package = Package(
             targets: ["SubstratePrimitives"]),
         .library(
             name: "SubstrateRpc",
-            targets: ["SubstrateRpc"]),
+            targets: ["SubstrateRpc","Serializable"]),
         .library(
             name: "SubstrateKeychain",
             targets: ["SubstrateKeychain"]),
@@ -51,6 +51,9 @@ var package = Package(
             name: "SubstrateRpc",
             dependencies: ["WebSocket"],
             path: "Sources/RPC"),
+        .target(
+            name: "Serializable",
+            dependencies: ["Serializable"]),
         .target(
             name: "SubstrateKeychain",
             dependencies: ["Substrate", "Sr25519", "Ed25519", "CSecp256k1", "Bip39", "UncommonCrypto"],
